@@ -48,12 +48,17 @@ button,
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   margin-bottom: var(--section-gap);
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  background: linear-gradient(180deg, #f7f8fb 0%, #eef2f6 100%);
+  box-shadow: 0 2px 8px rgba(47, 56, 68, 0.04);
 }
 
 .logo {
@@ -161,9 +166,8 @@ p {
   min-height: 420px;
   border-radius: 32px;
   padding: 2rem;
-  background: linear-gradient(180deg, rgba(93, 143, 168, 0.2) 0%, rgba(255,255,255,0.85) 100%);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(47, 56, 68, 0.08);
   display: grid;
   align-items: center;
   justify-items: center;
@@ -180,14 +184,6 @@ p {
   box-shadow: 0 18px 40px rgba(47, 56, 68, 0.08);
 }
 
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 32px;
-  background: radial-gradient(circle at top left, rgba(93, 143, 168, 0.16), transparent 38%);
-  pointer-events: none;
-}
 
 .hero-visual .visual-card {
   position: relative;
@@ -195,9 +191,8 @@ p {
   width: min(100%, 360px);
   padding: 1.75rem;
   border-radius: 26px;
-  background: #ffffff;
-  border: 1px solid #e6ecf3;
-  box-shadow: 0 18px 60px rgba(47, 56, 68, 0.08);
+  background: #f7f8fb;
+  box-shadow: 0 14px 32px rgba(47, 56, 68, 0.05);
 }
 
 .feature-grid {
@@ -213,7 +208,6 @@ p {
   padding: 1.75rem;
   border-radius: 24px;
   background: var(--surface);
-  border: 1px solid #e8edf3;
   box-shadow: 0 16px 40px rgba(47, 56, 68, 0.05);
   transition: transform var(--transition), border-color var(--transition);
 }
@@ -229,7 +223,6 @@ p {
   display: grid;
   gap: 1rem;
   background: #ffffff;
-  border: 1px solid #e8edf3;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 18px 50px rgba(47, 56, 68, 0.08);
@@ -267,9 +260,8 @@ p {
   margin-top: var(--section-gap);
   padding: 2.5rem;
   border-radius: 32px;
-  background: rgba(255,255,255,0.95);
-  border: 1px solid #e6ecf3;
-  box-shadow: var(--shadow);
+  background: #ffffff;
+  box-shadow: 0 24px 80px rgba(47, 56, 68, 0.08);
 }
 
 .contact-content {
@@ -306,7 +298,7 @@ p {
   width: 100%;
   padding: 1rem 1.1rem;
   border-radius: 18px;
-  border: 1px solid #d7dce4;
+  border: none;
   background: #f7f8fb;
   color: var(--text);
 }
@@ -325,7 +317,6 @@ p {
   padding: 1.8rem;
   border-radius: 28px;
   background: var(--accent-soft);
-  border: 1px solid #d9e7ef;
 }
 
 .contact-card h3 {
@@ -339,7 +330,6 @@ p {
 
 .feature-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(93, 143, 168, 0.26);
 }
 
 .feature-card strong {
@@ -355,10 +345,9 @@ p {
   grid-template-columns: 1.75fr 1fr;
   align-items: start;
   padding: 2.5rem 2rem;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid #e6ecf3;
+  background: #ffffff;
   border-radius: 32px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 24px 80px rgba(47, 56, 68, 0.08);
   animation: fadeIn 0.75s ease both;
   animation-delay: 0.35s;
 }
@@ -378,7 +367,6 @@ p {
   padding: 1rem 1.2rem;
   border-radius: 18px;
   background: #f7f8fb;
-  border: 1px solid #e8edf3;
   color: #2f3844;
   font-size: 0.98rem;
 }
