@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Razor FinTech</title>
+    <style>
+        /* Base Styles matching Razor FinTech theme */
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #333333;
+        }
+
+        /* Sea Blue Header Banner from the Wireframe */
+        .contact-header {
+            background-color: #005a5b; /* Sea blue color */
+            color: #ffffff;
+            padding: 40px 10%;
+        }
+        .contact-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .contact-header p {
+            margin: 5px 0 0 0;
+            opacity: 0.8;
+        }
+
+        /* Two-Column Main Content Container */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Left Side: Form Style */
+        .form-section h2 {
+            color: #005a5b;
+            margin-top: 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        input:focus, textarea:focus {
+            border-color: #005a5b;
+            outline: none;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Submit Button matching the theme */
+        .submit-btn {
+            background-color: #005a5b;
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 25px; /* Rounded pill shape from wireframe */
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #004041;
+        }
+
+        /* Right Side: Image Placeholder Box */
+        .image-placeholder {
+            border: 2px solid #ccc;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+        }
+        /* Draws the 'X' box visual from the wireframe */
+        .image-placeholder::before, .image-placeholder::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+        }
+        .image-placeholder::before { transform: rotate(20deg); }
+        .image-placeholder::after { transform: rotate(-20deg); }
+        .image-placeholder span {
+            position: relative;
+            z-index: 1;
+            background: #f9f9f9;
+            padding: 10px;
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        /* Responsive layout for mobile devices */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="contact-header">
+        <h1>Contact</h1>
+        <p>Contact us for more help</p>
+    </header>
+
+    <!-- Main Section Split -->
+    <main class="contact-container">
+        <!-- Left Side Form -->
+        <section class="form-section">
+            <h2>Drop us a message or question!</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+
+        <!-- Right Side Image Placeholder -->
+        <section class="image-placeholder">
+            <span>Image / Graphic Placement</span>
+        </section>
+    </main>
+
+</body>
+</html>
