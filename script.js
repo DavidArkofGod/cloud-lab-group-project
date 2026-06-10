@@ -1,63 +1,30 @@
-// ======================================
-// Cloud Computing Group Project
-// script.js
-// ======================================
+const navLinks = document.querySelectorAll('.nav-links a');
 
-// Welcome message 
-window.onload = function () {
-    alert("Welcome to the Cloud Innovators Website!");
+const setActiveNavLink = () => {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    link.classList.toggle('active', href === currentPage);
+  });
 };
 
-// Project information
-function showProjectInfo() {
-    document.getElementById("projectInfo").innerHTML =
-        "This website was created by Group 4  for the Introduction to Cloud Computing course. The project demonstrates a simple static website built with HTML, CSS, and JavaScript and deployed using GitHub Pages.";
-}
+const validateContactForm = () => {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
 
-// Current date and time
-function showDateTime() {
-    const currentDate = new Date();
+  form.addEventListener('submit', (event) => {
+    const name = document.getElementById('contact-name');
+    const email = document.getElementById('contact-email');
+    const message = document.getElementById('contact-message');
 
-    document.getElementById("dateTime").innerHTML =
-        "Current Date and Time: " + currentDate.toLocaleString();
-}
-
-// Validate contact form
-function validateForm() {
-
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-
-    if (name === "") {
-        alert("Please enter your name.");
-        return false;
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      event.preventDefault();
+      alert('Please complete all fields before sending your message.');
     }
+  });
+};
 
-    if (email === "") {
-        alert("Please enter your email.");
-        return false;
-    }
-
-    if (message === "") {
-        alert("Please enter your message.");
-        return false;
-    }
-
-    alert("Message sent successfully!");
-    return true;
-}
-
-// Display group members
-function showMembers() {
-
-    let members =
-        "Group Members:<br>" +
-        "1. David Dumashie Dzidepo Ahiaku<br>" +
-        "2. Chrisford KuukuEssuman<br>" +
-        "3. Fredrick Amofah Gyimah<br>" +
-        "4. Lawrence Kazabil Tindan<br>" +
-        "5. Member Five";
-
-    document.getElementById("members").innerHTML = members;
-}
+window.addEventListener('DOMContentLoaded', () => {
+  setActiveNavLink();
+  validateContactForm();
+});
